@@ -1,0 +1,30 @@
+hardware_constraints:
+  vram_limit: 11.5  # GB (dejar 0.5GB para sistema)
+  ram_limit: 14.0   # GB
+  batch_size_auto: true
+
+model_architecture:
+  base_model: "distilbert-base-uncased"
+  hidden_size: 384
+  num_layers: 6
+  attention_heads: 8
+  intermediate_size: 1536
+
+training_optimizations:
+  precision: "mixed"  # FP16/FP32
+  gradient_accumulation: 4
+  gradient_checkpointing: true
+  offload_to_cpu: false  # Mantener en GPU
+  cache_cleanup_interval: 10  # batches
+  
+memory_management:
+  swapling_enabled: true
+  checkpoint_frequency: 1000
+  buffer_size: 50
+  max_sequence_length: 256  # tokens
+
+data_pipeline:
+  streaming: true
+  chunk_size: 5000
+  prefetch_factor: 2
+  num_workers: 2  # Evitar saturar RAM
