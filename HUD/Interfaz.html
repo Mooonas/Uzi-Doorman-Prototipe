@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUD Drones Visor</title>
+    <link rel="stylesheet" href="Color.css">
+</head>
+<body>
+    <div class="visor">
+        <div class="eye left-eye"></div>
+        <div class="eye right-eye"></div>
+    </div>
+
+    <div class="controls">
+        <button onclick="setEmotion('neutral')">Neutral</button>
+        <button onclick="setEmotion('blink')">Parpadeo</button>
+        <button onclick="setEmotion('angry')">Enojo</button>
+        <button onclick="setEmotion('alert')">Alerta</button>
+    </div>
+
+    <script src="Interacciones.js"></script>
+</body>
+</html>
